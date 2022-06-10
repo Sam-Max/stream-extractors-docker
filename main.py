@@ -9,9 +9,11 @@ from config import Config
 
 
 if __name__ == "__main__":
+    
     plugins = dict(
         root="plugins"
     )
+    
     app = Client(
         "TroJanz",
         bot_token=Config.BOT_TOKEN,
@@ -20,5 +22,4 @@ if __name__ == "__main__":
         plugins=plugins,
         workers=300
     )
-    Config.AUTH_USERS.add(680815375)
     app.run()
