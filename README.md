@@ -3,7 +3,8 @@
 #### This Bot can extract audios and subtitles from video files.
 #### Send any valid video file and the bot shows you available streams in it that can be extracted!!
 
-3. **Deploying on VPS Using Docker**
+
+**Deploying on VPS Using Docker**
 
 - Start Docker daemon (skip if already running), if installed by snap then use 2nd command:
     
