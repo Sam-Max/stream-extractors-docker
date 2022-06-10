@@ -6,20 +6,20 @@
 from pyrogram import filters
 from pyrogram import Client as trojanz
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-
 from config import Config
-from script import Script
 
 
 @trojanz.on_message(filters.private & (filters.document | filters.video))
 async def confirm_dwnld(client, message):
-
-    if message.from_user.id not in Config.AUTH_USERS:
-        return
-
     media = message
     filetype = media.document or media.video
 
+    ausers = Config.AUTH_USERS.split(" ")
+    ausers_second= [int(user) for user in ausers]
+
+    if message.from_user.id not in ausers_second:
+        return
+    
     if filetype.mime_type.startswith("video/"):
         await message.reply_text(
             "**What you want me to do??**",
